@@ -2,11 +2,13 @@
   * list from http://1000mostcommonwords.com/1000-most-common-persian-words/
   * latinzed using http://mylanguages.org/farsi_romanization.php
   * sounds from https://forvo.com/
-## build:
- see [`Makefile`](./Makefile)
-
 ## Anki
+use https://github.com/Stvad/CrowdAnki to import this repo.
 
+## Build
+ see [`Makefile`](./Makefile). 
+
+N.B. media files must be put into anki collection
 ```
 cp snd/*mp3 ~/.local/share/Anki2/User\ 1/collection.media/
 ```
