@@ -4,13 +4,18 @@ use feature 'say';
 
 use MIME::Base64; 
 use ojo; 
+use utf8::all;
 
-while($_=<STDIN>){
+open my $in ,"<", "txt/fa_words_forvo.txt";
+open my $out,">", "txt/fa_words_mp3.txt";
+#print $fh "farsi\tlink\n";
+
+while($_=<$in>){
    print STDERR "looking up: $_";
    chomp;
    my @F=split /\t/;
    my $i=0;
-   say 
+   my $sounds =
       g($F[1])->
       dom("span.play")->
       map(
@@ -18,9 +23,13 @@ while($_=<STDIN>){
          $_=(split(/,/, $_->attr("onclick") ))[1];
          s/'//g;
          join("\t",
-            ++$i,
+            #++$i,
             $F[0],
             "https://audio00.forvo.com/mp3/".decode_base64($_));
-         })->join("\n");
+         })->to_array;
+
+   my $line=$sounds->[0];
+   print $out "$line\n";
+   print STDERR "$line\n";
    sleep(2);
 }

@@ -1,7 +1,17 @@
-## List
-http://1000mostcommonwords.com/1000-most-common-persian-words/
-## Pronunciations:
-using [forvo.com]()
+# 1000 common words Farsi -> english w/ pronunciations
+  * list from http://1000mostcommonwords.com/1000-most-common-persian-words/
+  * latinzed using http://mylanguages.org/farsi_romanization.php
+  * sounds from https://forvo.com/
+## build:
+ see [`Makefile`](./Makefile)
+
+## Anki
+
+```
+cp snd/*mp3 ~/.local/share/Anki2/User\ 1/collection.media/
+```
+## Scaping forvo
+using [forvo](forvo.com)
 ```
 #for 'عنوان'
 https://forvo.com/search/%D8%B9%D9%86%D9%88%D8%A7%D9%86/fa/
